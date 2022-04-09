@@ -1,0 +1,136 @@
+$no_algos: 6;
+$nav_background: rgb(59, 58, 58);
+$button_color: rgb(236, 248, 129);
+$button_hover_color: rgb(241, 122, 92);
+$selected_background_color: rgb(88, 80, 80);
+$selected_color: rgb(241, 122, 92);;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap');
+
+*{
+    margin: 0px; 
+    padding: 0px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: large;
+    font-weight: bold;
+    // text-transform: uppercase;
+}
+
+nav {
+    background-color: $nav_background;
+    color: white;
+    display: grid;
+    grid-template-columns: 30% 60%;
+    column-gap: 10%;
+    padding: 0% 5%;
+
+    .array-inputs {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        place-content: center;
+        padding: 5% 0%;
+
+        #a_size {
+            padding: 5% 0%;
+        }
+
+        #a_speed {
+            padding: 5% 0%;
+        }
+
+        #a_generate {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: $button_color;
+            padding-top: 4%;
+            padding-left: 20%;
+            &:hover {
+                color: $button_hover_color;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: column;
+
+        .nav-heading{
+            display: inline-block;
+            font-size: xx-large;
+            padding: 3% 0%;
+        }
+
+        .algos {
+            display: grid;
+            padding: 2% 0%;
+            place-content: center;
+            grid-template-columns: repeat($no_algos, (100%/$no_algos));
+
+            button {
+                background-color: transparent;
+                border: none;
+                color: $button_color;
+                outline: none;
+                padding: 5% 0%;
+
+                &:hover {
+                    color: $button_hover_color;
+                    cursor: pointer;
+                }
+            }
+
+            .butt_locked {
+                background-color: transparent;
+                color: white;
+                cursor: pointer;
+                &:hover {
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+
+            .butt_selected {
+                background-color: $selected_background_color;
+                color: $selected_color;
+                &:hover {
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+
+            .butt_unselected {
+                &:hover {
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+section {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+
+    #info-cont1{ 
+        padding: 20%;
+    }
+
+    #array-cont {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 70vh;
+    }
+
+    #info-cont2{ 
+        padding: 20%;
+    }
+}
+
+.hide {
+    display: none;
+}
